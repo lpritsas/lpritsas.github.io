@@ -10,6 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer">
 
   <!-- CSS -->
 <link rel="stylesheet" href="assets/css/site.css">
@@ -65,7 +68,7 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="section">
   <div class="container">
     <h2>About</h2>
     <p> Dedicated and results-driven Data & Analytics professional with 20+ years of experience in data warehousing, BI, and predictive analytics. Expanding into AI and Machine Learning, with hands-on experience in Python, TensorFlow, feature engineering, and advanced SQL.
@@ -75,7 +78,7 @@
 </section>
 
 <!-- SKILLS -->
-  <section id="skills">
+  <section id="skills" class="section">
     <h2>Skills</h2>
     <div class="chips">
       <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
@@ -89,7 +92,7 @@
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portfolio">
+  <section id="portfolio" class="section">
     <h2>Portfolio</h2>
     <div class="grid">
       <article class="card">
@@ -137,7 +140,7 @@
   </section>
 
   <!-- CONTACT / FOOTER -->
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact</h2>
     <p>Reach out at <a href="mailto:loukaspritsas@gmail.com">loukaspritsas@gmail.com</a> or on <a href="linkedin.com/in/loukaspritsas" target="_blank" rel="noopener">LinkedIn</a>.</p>
   </section>
@@ -170,15 +173,18 @@
     });
 
     // Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const mobile = document.getElementById('mobileMenu');
-    hamburger?.addEventListener('click', () => mobile.classList.toggle('mobile-open'));
+    const burger = document.getElementById('hamburger');
+    const menu   = document.getElementById('primary-menu');
 
-    // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    burger?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
 
     // Close mobile menu on link click
-    document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click',() => mobile.classList.remove('mobile-open')));
+    document.querySelectorAll('#primary-menu a')
+      .forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
   </script>
 
 </body>

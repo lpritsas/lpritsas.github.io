@@ -80,10 +80,13 @@ body{ font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica N
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: .75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* logo αριστερά, links δεξιά */
+  width: 100%;
+  padding: .75rem max(16px, 5vw);  /* breathing space */
 }
+
 .brand { display:flex; align-items:center; gap:.6rem; font-weight:700; color:var(--text); }
 .logo  { width:34px; height:34px; border-radius:10px; box-shadow:var(--shadow);
          background: linear-gradient(135deg, var(--primary), #22c1c3); }
@@ -224,25 +227,24 @@ html { scroll-behavior: smooth; }
 /* κεντραρισμένο hero, full viewport */
 :root{ --nav-h: 64px; } /* αν το navbar σου έχει άλλο ύψος, άλλαξέ το */
 
-.hero.hero--center{
-  min-height: calc(100dvh - var(--nav-h)); /* hero να “γεμίζει” οθόνη */
+.hero.hero--center {
+  min-height: calc(100dvh - var(--nav-h));
   display: grid;
-  place-items: center;          /* κάθετη & οριζόντια κεντράρισμα */
-  padding: 0 1rem;              /* κρατάμε λίγο padding αριστερά/δεξιά */
-  text-align: center;           /* κεντράρισμα κειμένου */
+  place-items: center;         /* κάθετη και οριζόντια στο κέντρο */
+  text-align: center;          /* το κείμενο στο κέντρο */
+  padding: 0 max(16px, 6vw);
 }
 
-.hero.hero--center .container{
-  max-width: 1100px;
+.hero.hero--center .container {
+  width: 100%;
+  margin: 0 auto;              /* κεντράρισμα */
+  max-width: 1200px;           /* μικρό cap για να μην απλώνουν οι γραμμές υπερβολικά */
 }
 
-/* τίτλος & υπότιτλος όπως στο παράδειγμα */
-.hero.hero--center h1{
-  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(40px, 8vw, 72px);
-  line-height: 1.06;
-  letter-spacing: -0.02em;
-  margin: 0 0 14px;
+.hero.hero--center h1 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 24ch;
 }
 
 .hero.hero--center .kicker{
@@ -254,14 +256,11 @@ html { scroll-behavior: smooth; }
   margin-bottom: 16px;
 }
 
-.hero.hero--center .subtitle{
-  font-size: clamp(16px, 2vw, 18px);
-  color: var(--muted);
-  max-width: 75ch;
-  margin: 0 auto 18px;          /* κεντραρισμένο + λίγο κενό */
+.hero.hero--center .subtitle {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* τα κουμπιά να έρχονται ακριβώς κάτω από το κείμενο, κεντραρισμένα */
 .hero.hero--center .cta-row{
   display: flex;
   gap: 12px;
@@ -276,11 +275,8 @@ html { scroll-behavior: smooth; }
 /* =========================================
    Sections & Skills
 ========================================= */
-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-}
+.section { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
+
 section h2 {
   font-size: clamp(1.4rem, 3vw, 2rem);
   margin: 0 0 1rem;
@@ -343,4 +339,120 @@ footer {
   padding: 2rem 1rem;
   text-align: center;
   color: var(--muted);
+}
+
+.card img {
+  display: none;
+}
+
+/* ---------- NAVBAR POLISH ---------- */
+.navbar { background: var(--bg); border-bottom: 1px solid var(--border); }
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  width:100%; padding:.75rem max(24px, 5vw);
+}
+.nav-links a{ font-weight:600; padding:.5rem .8rem; border-radius:.65rem; }
+.nav-links a:hover{ background:var(--bg-soft); color:var(--primary); }
+
+/* ---------- HERO POLISH ---------- */
+:root{ --nav-h: 64px; }
+
+/* ο hero γεμίζει την οθόνη και κεντράρει απόλυτα */
+.hero.hero--center{
+  min-height: calc(100dvh - var(--nav-h));
+  display:grid; place-items:center;
+  padding: 0 max(24px, 7vw);
+  text-align:center;
+}
+
+/* ελέγχουμε εμείς το πλάτος του hero περιεχομένου */
+.hero.hero--center .container{
+  width:100%;
+  max-width: 1200px;  /* cap για να μην ανοίγουν υπερβολικά οι γραμμές */
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* kicker */
+.hero.hero--center .kicker{
+  font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+  font-weight:800; color:var(--primary);
+  margin: 0 0 18px;
+}
+
+/* Τίτλος – πιο “γεμάτος” σαν το δείγμα, αλλά χωρίς να ξεχειλώνει */
+.hero.hero--center h1{
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 9vw, 88px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  max-width: 22ch;     /* κοντράρει τα χειρότερα line-breaks */
+  margin-inline:auto;
+}
+
+/* Υπότιτλος – λίγο πιο σκούρο γκρι και σωστό πλάτος */
+.hero.hero--center .subtitle{
+  font-size: clamp(16px, 2vw, 18px);
+  color: var(--muted);
+  max-width: 75ch;
+  margin: 0 auto 18px;
+}
+
+/* CTA row κάτω από το κείμενο, κεντραρισμένο */
+.hero.hero--center .cta-row{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px;
+}
+
+/* Buttons λίγο πιο “μαλακά” και consistent */
+.btn{ border-radius:.95rem; box-shadow:var(--shadow); }
+.btn-primary{ background: linear-gradient(135deg, var(--primary), #7c3aed); color:#fff; border:none; }
+
+/* ---------- SECTION CAP (ώστε μόνο τα άλλα sections να έχουν max-width) ---------- */
+.section { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
+/* Αν κάπου έχεις plain "section { ... }", κράτα αυτό στο τέλος ώστε να υπερισχύσει */
+
+/* ---------- SCROLL OFFSET για anchors (About/Skills/Portfolio) ---------- */
+#about, #skills, #portfolio { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+/* ---------- RESPONSIVE TWEAKS ---------- */
+@media (max-width: 900px){
+  .hero.hero--center h1{ max-width: 18ch; }
+}
+@media (max-width: 600px){
+  .hero.hero--center{ padding: 0 20px; }
+  .hero.hero--center h1{ font-size: clamp(40px, 12vw, 64px); }
+}
+
+/* Force full-bleed, single-column hero */
+.hero.hero--center,
+.hero.hero--wide{
+  max-width: none !important;
+  margin: 0 !important;
+  grid-template-columns: 1fr !important; /* όχι το 1.4fr 1fr */
+  padding: 0 max(24px, 7vw) !important;  /* ανασαίνει οριζόντια */
+}
+
+/* Κεντραρισμένο περιεχόμενο & ωραία line-breaks */
+.hero.hero--center .container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+.hero.hero--center h1{
+  font-weight: 800;
+  font-size: clamp(48px, 9vw, 88px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+  margin: 0 auto 16px;
+}
+.hero.hero--center .subtitle{
+  max-width: 75ch;
+  margin: 0 auto 18px;
+}
+.hero.hero--center .cta-row{
+  justify-content: center;
 }
