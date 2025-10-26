@@ -6,47 +6,59 @@
   <title>Loukas Pritsas — Senior Data Engineer | Data Analyst | Data Warehouse Systems | Machine Learning</title>
   <meta name="description" content="Portfolio of Loukas Pritsas" />
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <style>
-    :root {
-      --bg: #0b0d10;
-      --bg-soft: #12161a;
-      --text: #e6e9ef;
-      --muted: #9aa4b2;
-      --brand: #4f46e5; /* indigo */
-      --card: #101418;
-      --border: #1f242b;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root{
+      --container: 1200px;
+      --primary: #6b47ff;   /* μωβ που φαίνεται στο hero */
+      --text: #0f172a;      /* slate-900 */
+      --muted: #475569;     /* slate-600 */
+      --card: #f1f5f9;      /* slate-100 */
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
     }
+
+        * { box-sizing: border-box; }
+    html, body { height:100%; }
+    body{
+      font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text);
+      margin:0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .container{ max-width:var(--container); margin:0 auto; padding:0 24px; }
+    a{ color:inherit; text-decoration:none; }
 
     [data-theme="light"] {
       --bg: #ffffff;
       --bg-soft: #f7f8fb;
       --text: #101418;
       --muted: #5b6470;
-      --brand: #4f46e5;
+      --brand: #070530;
       --card: #ffffff;
       --border: #e7eaf0;
       --shadow: 0 10px 30px rgba(0,0,0,.08);
     }
 
     html, body {
-      height: 100%;
-      scroll-behavior: smooth;
-    }
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
+    /* Προαιρετικά: βάρη για τίτλους/κειμενο */
+    h1, h2, h3 { font-weight: 700; }   /* Bold */
+    h4, h5, h6 { font-weight: 600; }   /* SemiBold */
+    p, li, span, a { font-weight: 400; } /* Regular */
+    strong { font-weight: 600; }       /* Καλύτερο από 700 για αναγνωσιμότητα */
 
     /* ---------- NAVBAR ---------- */
     .navbar {
@@ -194,23 +206,50 @@
   </nav>
 
   <!-- HERO -->
-  <header id="home" class="hero">
-    <div>
-      <div class="kicker">Senior Data Engineer | Data Analyst | Data Warehouse Systems | Machine Learning</div>
-      <h1>Building robust data platforms and production‑ready AI.</h1>
-      <p class="subtitle">I design ELT/ETL pipelines, optimize ML systems end‑to‑end, and ship reliable products. Focus on Python, SQL, Spark, orchestration and model serving.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#portfolio"><i class="fa-solid fa-rocket"></i> View Portfolio</a>
-        <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i> Get in touch</a>
-      </div>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Loukas Pritsas</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <aside class="hero-card" aria-label="Quick facts">
-      <div class="stat"><i class="fa-solid fa-diagram-project"></i> <div><strong>25+ projects</strong><div class="muted">Data/ML, APIs, dashboards</div></div></div>
-      <div class="stat"><i class="fa-solid fa-trophy"></i> <div><strong>Kaggle highlights</strong><div class="muted">Top solutions & notebooks</div></div></div>
-      <div class="stat"><i class="fa-solid fa-server"></i> <div><strong>MLOps</strong><div class="muted">Docker • Airflow • K8s</div></div></div>
-    </aside>
   </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">SENIOR DATA ENGINEER | DATA ANALYST | DATA WAREHOUSE SYSTEMS | MACHINE LEARNING</p>
+        <h1>Building robust data platforms and production-ready AI.</h1>
+        <p class="lead">
+          I design ELT/ETL pipelines, optimize ML systems end-to-end, and ship reliable products.
+          Focus on Python, SQL, Spark, orchestration and model serving.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#portfolio">View Portfolio</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <aside class="hero-cards">
+        <div class="info-card">
+          <div class="title">25+ projects</div>
+          <div class="sub">Data/ML, APIs, dashboards</div>
+        </div>
+        <div class="info-card">
+          <div class="title">Kaggle highlights</div>
+          <div class="sub">Top solutions & notebooks</div>
+        </div>
+        <div class="info-card">
+          <div class="title">MLOps</div>
+          <div class="sub">Docker • Airflow • K8s</div>
+        </div>
+      </aside>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section id="about">
@@ -283,7 +322,7 @@
   <!-- CONTACT / FOOTER -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Reach out at <a href="mailto:you@example.com">you@example.com</a> or on <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    <p>Reach out at <a href="mailto:loukaspritsas@gmail.com">loukaspritsas@gmail.com</a> or on <a href="linkedin.com/in/loukaspritsas" target="_blank" rel="noopener">LinkedIn</a>.</p>
   </section>
 
   <footer>
