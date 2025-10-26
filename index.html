@@ -11,98 +11,70 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
 
-<!-- CSS -->
+  <!-- CSS -->
 <link rel="stylesheet" href="assets/css/site.css">
 
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="site-nav" aria-label="Primary">
-  <div class="container nav-inner">
-    <a class="brand" href="#home" aria-label="Go to top">
+
+<!-- NAVBAR -->
+<nav class="navbar" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="brand" href="#home" aria-label="Home">
       <span class="logo" aria-hidden="true"></span>
       <span>Loukas Pritsas</span>
     </a>
 
-    <!-- Hamburger (εμφανής μόνο σε κινητά με CSS) -->
+    <!-- Hamburger shows only on mobile -->
     <button class="icon-btn hamburger" id="hamburger"
             aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false">
       <i class="fa-solid fa-bars" aria-hidden="true"></i>
     </button>
 
-    <!-- Κύριο μενού (ένα για όλα) -->
-    <ul id="primary-menu" class="nav-list">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+    <ul id="primary-menu" class="nav-links">
+      <li><a href="#about"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> About</a></li>
+      <li><a href="#skills"><i class="fa-solid fa-code" aria-hidden="true"></i> Skills</a></li>
+      <li><a href="#portfolio"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Portfolio</a></li>
     </ul>
 
-    <!-- Δεξιές ενέργειες -->
     <div class="right-actions">
       <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light" aria-pressed="false">
-        <i class="fa-solid fa-moon" aria-hidden="true"></i>
-        <i class="fa-solid fa-sun" aria-hidden="true" style="display:none"></i>
+        <i class="fa-solid fa-moon" id="moonIcon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun"  id="sunIcon"  style="display:none" aria-hidden="true"></i>
       </button>
-      <a class="icon-btn" href="https://github.com/lpritsas" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
-      </a>
     </div>
   </div>
 </nav>
 
-  <!-- HERO -->
-  <header class="site-nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">Loukas Pritsas</a>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-        </ul>
-      </nav>
+<!-- HERO -->
+<section class="hero hero--center hero--wide" id="home">
+  <div class="container">
+    <p class="kicker">SENIOR DATA ENGINEER | DATA ANALYST | DATA WAREHOUSE SYSTEMS | MACHINE LEARNING</p>
+
+    <h1>Building robust data platforms<br>and production-ready AI.</h1>
+
+    <p class="subtitle">
+      I design pipelines (ETL), optimize ML systems end-to-end, and build reliable products.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#portfolio">View Portfolio</a>
+      <a class="btn" href="#contact">Get in touch</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="kicker">SENIOR DATA ENGINEER | DATA ANALYST | DATA WAREHOUSE SYSTEMS | MACHINE LEARNING</p>
-        <h1>Building robust data platforms and production-ready AI.</h1>
-        <p class="lead">
-          I design ELT/ETL pipelines, optimize ML systems end-to-end, and ship reliable products.
-          Focus on Python, SQL, Spark, orchestration and model serving.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#portfolio">View Portfolio</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
-        </div>
-      </div>
-
-      <aside class="hero-cards">
-        <div class="info-card">
-          <div class="title">25+ projects</div>
-          <div class="sub">Data/ML, APIs, dashboards</div>
-        </div>
-        <div class="info-card">
-          <div class="title">Kaggle highlights</div>
-          <div class="sub">Top solutions & notebooks</div>
-        </div>
-        <div class="info-card">
-          <div class="title">MLOps</div>
-          <div class="sub">Docker • Airflow • K8s</div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
     <h2>About</h2>
-    <p>Short bio about you. Two or three sentences on your background, focus areas and what problems you love solving. Mention industries or domains if relevant.</p>
-  </section>
+    <p> Dedicated and results-driven Data & Analytics professional with 20+ years of experience in data warehousing, BI, and predictive analytics. Expanding into AI and Machine Learning, with hands-on experience in Python, TensorFlow, feature engineering, and advanced SQL.
+        Combining technical expertise with business insight, I focus on building intelligent, data-driven solutions that create real impact. Eager to contribute to applied AI projects while advancing toward an AI Engineer role in a collaborative, learning-oriented team.
+    </p>
+  </div>
+</section>
 
-  <!-- SKILLS -->
+<!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="chips">
@@ -171,7 +143,7 @@
   </section>
 
   <footer>
-    © <span id="y"></span> Loukas Pritsas — Built with HTML/CSS/JS. Theme toggle with localStorage.
+    © <span id="y"></span> Loukas Pritsas copyright
   </footer>
 
   <script>
@@ -208,6 +180,7 @@
     // Close mobile menu on link click
     document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click',() => mobile.classList.remove('mobile-open')));
   </script>
+
 </body>
 </html>
 
