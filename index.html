@@ -11,199 +11,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=greek" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/site.css">
 
-  <style>
-    :root{
-      --container: 1200px;
-      --primary: #6b47ff;   /* μωβ που φαίνεται στο hero */
-      --text: #0f172a;      /* slate-900 */
-      --muted: #475569;     /* slate-600 */
-      --card: #f1f5f9;      /* slate-100 */
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
-    }
-
-        * { box-sizing: border-box; }
-    html, body { height:100%; }
-    body{
-      font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-      color:var(--text);
-      margin:0;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    .container{ max-width:var(--container); margin:0 auto; padding:0 24px; }
-    a{ color:inherit; text-decoration:none; }
-
-    [data-theme="light"] {
-      --bg: #ffffff;
-      --bg-soft: #f7f8fb;
-      --text: #101418;
-      --muted: #5b6470;
-      --brand: #070530;
-      --card: #ffffff;
-      --border: #e7eaf0;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
-    }
-
-    html, body {
-  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-    /* Προαιρετικά: βάρη για τίτλους/κειμενο */
-    h1, h2, h3 { font-weight: 700; }   /* Bold */
-    h4, h5, h6 { font-weight: 600; }   /* SemiBold */
-    p, li, span, a { font-weight: 400; } /* Regular */
-    strong { font-weight: 600; }       /* Καλύτερο από 700 για αναγνωσιμότητα */
-
-    /* ---------- NAVBAR ---------- */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: saturate(1.2) blur(6px);
-      background: color-mix(in oklab, var(--bg) 85%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: .75rem 1rem;
-    }
-    .brand {
-      display: flex; align-items: center; gap: .6rem;
-      font-weight: 700; letter-spacing: .2px;
-    }
-    .brand .logo {
-      width: 34px; height: 34px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--brand), #22c1c3);
-      box-shadow: var(--shadow);
-    }
-    .nav-links { display: flex; align-items: center; gap: .75rem; }
-    .nav-links a {
-      display: inline-flex; align-items: center; gap: .45rem;
-      color: var(--text); text-decoration: none; font-weight: 600;
-      padding: .55rem .8rem; border-radius: .65rem;
-    }
-    .nav-links a i { font-size: .95rem; opacity: .9; }
-    .nav-links a:hover { background: var(--bg-soft); }
-
-    .right-actions { display: flex; align-items: center; gap: .5rem; }
-    .icon-btn {
-      width: 40px; height: 40px; display: grid; place-items: center;
-      border-radius: .75rem; border: 1px solid var(--border);
-      background: var(--card); box-shadow: var(--shadow);
-      color: var(--text); cursor: pointer;
-    }
-    .icon-btn:hover { transform: translateY(-1px); }
-
-    /* mobile */
-    .hamburger { display: none; }
-    @media (max-width: 820px) {
-      .nav-links { display: none; }
-      .hamburger { display: inline-grid; }
-      .mobile-menu {
-        display: none; flex-direction: column; gap: .25rem; padding: .5rem;
-        border-top: 1px solid var(--border); background: var(--bg);
-      }
-      .mobile-menu a { padding: .9rem; border-radius: .6rem; text-decoration: none; color: var(--text); font-weight: 600; }
-      .mobile-menu a:hover { background: var(--bg-soft); }
-      .mobile-open { display: flex; }
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      max-width: 1100px; margin: 0 auto; padding: 5.5rem 1rem 3rem;
-      display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: center;
-    }
-    .kicker { color: var(--brand); font-weight: 800; letter-spacing: .8px; text-transform: uppercase; font-size: .8rem; }
-    h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.1; margin: .4rem 0 1rem; }
-    .subtitle { font-size: clamp(1rem, 2.2vw, 1.15rem); color: var(--muted); max-width: 56ch; }
-
-    .cta-row { display: flex; gap: .75rem; margin-top: 1.4rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; font-weight: 700;
-      padding: .85rem 1rem; border-radius: .9rem; border: 1px solid var(--border);
-      background: var(--card); color: var(--text); box-shadow: var(--shadow);
-    }
-    .btn-primary { background: linear-gradient(135deg, var(--brand), #7c3aed); color: #fff; border: none; }
-    .btn:hover { transform: translateY(-1px); }
-
-    .hero-card {
-      border: 1px solid var(--border); background: var(--card); border-radius: 1.2rem; padding: 1rem; box-shadow: var(--shadow);
-      display: grid; gap: .8rem;
-    }
-    .stat {
-      display: flex; align-items: center; gap: .8rem; padding: .75rem; border-radius: .9rem; background: var(--bg-soft);
-    }
-    .stat i { font-size: 1.1rem; opacity: .9; }
-    .muted { color: var(--muted); }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 4.5rem; }
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
-    section h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin: 0 0 1rem; }
-    .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .chip { border: 1px solid var(--border); padding: .55rem .8rem; border-radius: .65rem; background: var(--card); }
-
-    /* Portfolio grid */
-    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 980px) { .grid { grid-template-columns: repeat(2, 1fr);} }
-    @media (max-width: 620px) { .grid { grid-template-columns: 1fr;} }
-    .card {
-      border: 1px solid var(--border); background: var(--card); border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow);
-      display: flex; flex-direction: column;
-    }
-    .card img { width: 100%; height: 160px; object-fit: cover; }
-    .card .content { padding: 1rem; display: grid; gap: .6rem; }
-    .badge-row { display: flex; gap: .4rem; flex-wrap: wrap; }
-    .badge { font-size: .75rem; padding: .3rem .55rem; border-radius: .5rem; background: var(--bg-soft); border: 1px solid var(--border); }
-
-    footer { border-top: 1px solid var(--border); padding: 2rem 1rem; text-align: center; color: var(--muted); }
-  </style>
 </head>
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar" aria-label="Primary Navigation">
-    <div class="nav-inner">
-      <a class="brand" href="#home" aria-label="Go to top">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Loukas Pritsas</span>
+  <nav class="site-nav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a class="brand" href="#home" aria-label="Go to top">
+      <span class="logo" aria-hidden="true"></span>
+      <span>Loukas Pritsas</span>
+    </a>
+
+    <!-- Hamburger (εμφανής μόνο σε κινητά με CSS) -->
+    <button class="icon-btn hamburger" id="hamburger"
+            aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <!-- Κύριο μενού (ένα για όλα) -->
+    <ul id="primary-menu" class="nav-list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+
+    <!-- Δεξιές ενέργειες -->
+    <div class="right-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light" aria-pressed="false">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun" aria-hidden="true" style="display:none"></i>
+      </button>
+      <a class="icon-btn" href="https://github.com/lpritsas" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
       </a>
-
-      <div class="nav-links" role="menubar">
-        <a href="#about" role="menuitem" aria-label="About section"><i class="fa-solid fa-circle-info"></i> About</a>
-        <a href="#skills" role="menuitem" aria-label="Skills section"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</a>
-        <a href="#portfolio" role="menuitem" aria-label="Portfolio section"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
-      </div>
-
-      <div class="right-actions">
-        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">
-          <i class="fa-solid fa-moon" id="moonIcon"></i>
-          <i class="fa-solid fa-sun" id="sunIcon" style="display:none"></i>
-        </button>
-        <a class="icon-btn" href="https://github.com/lpritsas" target="_blank" rel="noopener" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <button class="icon-btn hamburger" id="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-      </div>
     </div>
-    <div id="mobileMenu" class="mobile-menu" role="menu">
-      <a href="#about"><i class="fa-solid fa-circle-info"></i> About</a>
-      <a href="#skills"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</a>
-      <a href="#portfolio"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
-    </div>
-  </nav>
+  </div>
+</nav>
 
   <!-- HERO -->
   <header class="site-nav">
@@ -365,3 +210,4 @@
   </script>
 </body>
 </html>
+
