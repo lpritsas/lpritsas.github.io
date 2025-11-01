@@ -198,6 +198,38 @@ section h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 1rem; }
   .xp-head { grid-template-columns: 1fr; }
 }
 
+/* About full-screen όπως το hero */
+.section--full {
+  min-height: calc(100dvh - var(--nav-h));
+  display: flex;
+  align-items: center;
+}
+
+/* Κάρτες ίδιου ύψους και κουμπί καρφωμένο κάτω */
+.grid .card { display: flex; flex-direction: column; }
+.grid .card .content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.grid .card .card-actions { margin-top: auto; }
+
+/* (προαιρετικό) εικόνες σε σταθερό ratio αν τις χρησιμοποιήσεις */
+.grid .card > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block; /* αν θες να φαίνονται */
+}
+
+.section--full {
+  min-height: calc(100dvh - var(--nav-h));
+  display: flex;
+  flex-direction: column;   /* <-- προσθήκη */
+  justify-content: center;  /* <-- προσθήκη */
+  align-items: stretch;     /* προαιρετικό */
+}
+
 /* ===============================
    Skills
 =============================== */
@@ -273,8 +305,15 @@ section h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 1rem; }
   border: 1px solid var(--border); background: var(--card); border-radius: 1rem;
   overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column;
 }
-.card img { width: 100%; height: 160px; object-fit: cover; display: none; } /* προαιρετικό */
+.card img { width: 100%; height: 160px; object-fit: cover; display: block; } /* προαιρετικό */
 .card .content { padding: 1rem; display: grid; gap: .6rem; }
+
+.card .content {
+  padding: 1rem;
+  display: flex;           /* <-- flex αντί για grid */
+  flex-direction: column;  /* κάθετη ροή */
+  gap: .6rem;
+}
 
 /* ===============================
    Contact
